@@ -156,11 +156,11 @@ class TASizeLabel: UILabel {
     private func correctFontSizeForDevice (deviceSize : DeviceSize, pointSpecified: CGFloat) -> CGFloat{
         switch deviceSize {
         case .Small:
-            return checkReductionSize(reduceToSize, pointSpecified, 10) // <= 6 is default set up, you can change as well
+            return checkReductionSize(reduceToSize, pointSpecified, 15) // <= 15 is default set up, you can change as well
         case .Retina:
-            return checkReductionSize(reduceToSize, pointSpecified, 8) // <= 4 is default set up, you can change as well
+            return checkReductionSize(reduceToSize, pointSpecified, 10) // <= 10 is default set up, you can change as well
         case .HDRetina:
-            return checkReductionSize(reduceToSize, pointSpecified, 5) // <= 2 is default set up, you can change as well
+            return checkReductionSize(reduceToSize, pointSpecified, 5) // <= 5 is default set up, you can change as well
         case .SuperRetina, .Other:
             return pointSpecified
         }
