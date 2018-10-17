@@ -23,13 +23,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="xSize">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSizeLevel">
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="requiredResize" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="reduceToSize">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
@@ -43,7 +43,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="lbl1" destination="ClK-nj-rzZ" id="aSk-2n-1qZ"/>
+                        <outlet property="lblSizeOne" destination="ClK-nj-rzZ" id="mR9-NW-KdT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
