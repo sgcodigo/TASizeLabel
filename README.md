@@ -35,13 +35,13 @@ First you need to define the `UILabel` that you want to use as **`TASizeLabel`**
 
 ![alt text](https://raw.githubusercontent.com/sgcodigo/TASizeLabel/master/Resource/ClassName.png)
 
-### 1. You can use this label via `IBInspectable`###
+### 1. You can use this label via `IBInspectable` ###
 
-**Font Size Label** - is the enum that you configured. Can set it to 0,1,2,3,4
+> **Font Size Label** - is the enum that you configured. Can set it to 0,1,2,3,4
 
-**Required Resize** - `true` will use default auto resize config. Default is `false`
+> **Required Resize** - `true` will use default auto resize config. Default is `false`
 
-**Reduce To Size** - When you set `requiredResize` to `true`, you can also set custom reduce point instead of using default configuration.
+> **Reduce To Size** - When you set `requiredResize` to `true`, you can also set custom reduce point instead of using default configuration.
 
 ![alt text](https://raw.githubusercontent.com/sgcodigo/TASizeLabel/master/Resource/Inspectable.png)
 
