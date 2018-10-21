@@ -61,6 +61,8 @@ class TASizeLabel: UILabel {
     // IB: use the adapter
     @IBInspectable var requiredResize: Bool = false
     
+    @IBInspectable var kerningSpace: CGFloat = 0.0
+    
     // The minimum size that you want to shrink on smaller device [Small].
     // Higher device will be automatically reduce to each based on that you defined.
     @IBInspectable var minimumSize: Int = 0
@@ -80,6 +82,7 @@ class TASizeLabel: UILabel {
     
     func commonInit(){
         self.controlFontSize(sizeLevel: sizeLevel, deviceSize: checkDevice())
+        self.addCharactersSpacing(kerningSpace)
     }
     
     // For checking iPhone screens resolution
@@ -113,6 +116,13 @@ class TASizeLabel: UILabel {
             }
         }else{
             return .Other
+        }
+    }
+    
+    func addCharactersSpacing(_ value: CGFloat) {
+        if let textString = text {
+            let attrs: [NSAttributedStringKey : Any] = [.kern: value]
+            attributedText = NSAttributedString(string: textString, attributes: attrs)
         }
     }
     
