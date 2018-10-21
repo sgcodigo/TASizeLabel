@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblSizeOne.requiredResize = true
-        lblSizeOne.fontSizeLevel = 0
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 }

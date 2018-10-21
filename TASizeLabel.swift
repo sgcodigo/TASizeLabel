@@ -57,9 +57,14 @@ class TASizeLabel: UILabel {
     
     private var fontSize : CGFloat = 0.0
     private var pointSpecified: CGFloat = 0.0
+    private var isResized: Bool = false
     
     // IB: use the adapter
-    @IBInspectable var requiredResize: Bool = false
+    @IBInspectable var requiredResize: Bool = false {
+        didSet{
+            self.isResized = requiredResize
+        }
+    }
     
     @IBInspectable var kerningSpace: CGFloat = 0.0
     
@@ -121,7 +126,7 @@ class TASizeLabel: UILabel {
     
     func addCharactersSpacing(_ value: CGFloat) {
         if let textString = text {
-            let attrs: [NSAttributedStringKey : Any] = [.kern: value]
+            let attrs: [NSAttributedString.Key : Any] = [.kern: value]
             attributedText = NSAttributedString(string: textString, attributes: attrs)
         }
     }
@@ -180,8 +185,8 @@ class TASizeLabel: UILabel {
     }
     
     private func checkReductionSize(_ reductionSize: Int,_ pointSpecified: CGFloat,_ defaultReductionSize: Int) -> CGFloat{
-        if requiredResize{
-            if reductionSize != 0{
+        if isResized{
+            if reductionSize != 0 && reductionSize > 0{
                 return pointSpecified - CGFloat(reductionSize)
             }else{
                 return pointSpecified - CGFloat(defaultReductionSize)
