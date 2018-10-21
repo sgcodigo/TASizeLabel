@@ -60,7 +60,10 @@ class TASizeLabel: UILabel {
     
     // IB: use the adapter
     @IBInspectable var requiredResize: Bool = false
-    @IBInspectable var reduceToSize: Int = 0
+    
+    // The minimum size that you want to shrink on smaller device [Small].
+    // Higher device will be automatically reduce to each based on that you defined.
+    @IBInspectable var minimumSize: Int = 0
     
     
     required init(coder aDecoder: NSCoder) {
@@ -156,11 +159,11 @@ class TASizeLabel: UILabel {
     private func correctFontSizeForDevice (deviceSize : DeviceSize, pointSpecified: CGFloat) -> CGFloat{
         switch deviceSize {
         case .Small:
-            return checkReductionSize(reduceToSize, pointSpecified, 15) // <= 15 is default set up, you can change as well
+            return checkReductionSize(minimumSize, pointSpecified, 15) // <= 15 is default set up, you can change as well
         case .Retina:
-            return checkReductionSize(reduceToSize, pointSpecified, 10) // <= 10 is default set up, you can change as well
+            return checkReductionSize(minimumSize - 5, pointSpecified, 10) // <= 10 is default set up, you can change as well
         case .HDRetina:
-            return checkReductionSize(reduceToSize, pointSpecified, 5) // <= 5 is default set up, you can change as well
+            return checkReductionSize(minimumSize - 10, pointSpecified, 5) // <= 5 is default set up, you can change as well
         case .SuperRetina, .Other:
             return pointSpecified
         }

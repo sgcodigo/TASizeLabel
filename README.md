@@ -41,7 +41,7 @@ First you need to define the `UILabel` that you want to use as **`TASizeLabel`**
 
 **Required Resize** - `true` will use default auto resize config. Default is `false`
 
-**Reduce To Size** - When you set `requiredResize` to `true`, you can also set custom reduce point instead of using default configuration.
+**Minimum Size** - When you set `requiredResize` to `true`, you can also set custom reduce point for smaller devices [iPhone 4S and 5 sizes] instead of using default configuration. Just set the smallest size that you want to see on those devices and it will automatically resized as same algorithum used on high end devices.
 
 ![alt text](https://raw.githubusercontent.com/sgcodigo/TASizeLabel/master/Resource/Inspectable.png)
 
